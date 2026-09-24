@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="ABYZOR AI Module - local AI engine for Windows and macOS" width="100%"/>
+  <img src="assets/banner.png" alt="ABYZOR AI Module - local AI engine for Windows and macOS" width="100%"/>
 </p>
 
 <p align="center">
