@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/abyzor/abyzor-ai-module/releases"><img src="https://img.shields.io/github/v/release/abyzor/abyzor-ai-module?include_prereleases&label=Latest%20Beta&style=for-the-badge" alt="Latest release"/></a>
+  <a href="https://github.com/abyzor/abyzor-ai-module/releases"><img src="https://img.shields.io/github/v/release/abyzor/abyzor-ai-module?label=Latest%20Beta&amp;include_prereleases&amp;sort=semver&amp;style=for-the-badge" alt="Latest Beta release"/></a>
   <a href="https://github.com/abyzor/abyzor-ai-module/releases"><img src="https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows x64"/></a>
   <a href="https://github.com/abyzor/abyzor-ai-module/releases"><img src="https://img.shields.io/badge/macOS-Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS Apple Silicon"/></a>
   <a href="https://huggingface.co/abyzor/abyzor-ai-module-engine"><img src="https://img.shields.io/badge/Engine-Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Engine on Hugging Face"/></a>
