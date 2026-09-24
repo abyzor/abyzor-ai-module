@@ -132,24 +132,6 @@ Latest manifest URL (example for pinned version):
 
 ---
 
-## For maintainers
-
-Build and publish from the private monorepo `abyzor-midi-ai` (see `docs/installer-release-checklist.md` there).
-
-**Windows installer + manifest base:**
-
-```powershell
-.\packaging\installer\publish_ai_module_release.ps1 -Version X.Y.Z -SkipEngineBuild
-```
-
-**macOS installer:** GitHub Actions â†’ **AI Module Installer (macOS)**, or `publish_ai_module_macos.sh` on a Mac.
-
-**macOS engine on Hugging Face:** Actions â†’ **AI Module Engine (macOS)** with `upload_huggingface=true`.
-
-Attach **`dist/`** installers + unified **`manifest.json`** to a **Pre-release** on this repo. Engine zips live on Hugging Face only.
-
----
-
 ## Links
 
 - [Download releases](https://github.com/abyzor/abyzor-ai-module/releases)
