@@ -1,21 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-label="ABYZOR AI Module">
+from pathlib import Path
+
+svg = '''<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="50%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#312e81"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="0.55" stop-color="#111111"/>
+      <stop offset="1" stop-color="#050505"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dff8ff"/>
+      <stop offset="1" stop-color="#78c8df"/>
     </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".045"/>
+    </pattern>
   </defs>
-  <rect width="1200" height="280" rx="16" fill="url(#bg)"/>
-  <text x="80" y="118" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="52" font-weight="700">ABYZOR AI Module</text>
-  <text x="80" y="168" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Local AI engine � Windows &amp; macOS � Offline</text>
-  <rect x="80" y="196" width="132" height="36" rx="8" fill="url(#accent)" opacity="0.9"/>
-  <text x="98" y="220" fill="#0f172a" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600">Public Beta</text>
-  <circle cx="980" cy="140" r="72" fill="#6366f1" opacity="0.25"/>
-  <circle cx="1040" cy="100" r="48" fill="#a855f7" opacity="0.35"/>
-  <path d="M920 200 L980 120 L1040 200 Z" fill="url(#accent)" opacity="0.5"/>
-</svg>
+
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <rect width="1600" height="700" fill="url(#grid)"/>
+
+  <!-- subtle circuitry -->
+  <g fill="none" stroke="#bfefff" stroke-opacity=".13">
+    <path d="M980 90h170v80h170v90h190"/>
+    <path d="M1080 560h160v-70h170v-90h150"/>
+    <path d="M1260 120v-55h110"/>
+  </g>
+
+  <!-- MIDI grid -->
+  <g transform="translate(1010 105)" opacity=".55">
+    <rect width="500" height="275" rx="8" fill="#080808" stroke="#dff8ff" stroke-opacity=".22"/>
+    <g stroke="#fff" stroke-opacity=".08">
+      <path d="M0 55h500M0 110h500M0 165h500M0 220h500"/>
+      <path d="M100 0v275M200 0v275M300 0v275M400 0v275"/>
+    </g>
+    <g fill="#e8fbff">
+      <rect x="25" y="205" width="85" height="22" rx="2"/>
+      <rect x="130" y="150" width="110" height="22" rx="2"/>
+      <rect x="260" y="95" width="75" height="22" rx="2"/>
+      <rect x="355" y="42" width="120" height="22" rx="2"/>
+      <rect x="405" y="150" width="65" height="22" rx="2"/>
+    </g>
+  </g>
+
+  <!-- data streams -->
+  <g fill="none" stroke="url(#accent)" stroke-linecap="round" opacity=".72" filter="url(#glow)">
+    <path d="M1130 390 C1220 440 1280 510 1390 565 C1450 595 1500 600 1570 590" stroke-width="3"/>
+    <path d="M1120 410 C1230 475 1280 535 1390 600 C1450 630 1510 625 1580 615" stroke-width="1"/>
+    <path d="M1100 430 C1210 500 1280 560 1380 625" stroke-width="1"/>
+  </g>
+
+  <!-- AI chip -->
+  <g transform="translate(1230 515)">
+    <rect x="0" y="0" width="250" height="105" rx="12" fill="#0b0b0b" stroke="#dff8ff" stroke-opacity=".45"/>
+    <rect x="25" y="20" width="200" height="65" rx="7" fill="#101010" stroke="#dff8ff" stroke-opacity=".18"/>
+    <path d="M100 68 L125 30 L150 68 L138 68 L125 49 L112 68Z" fill="#e8fbff" filter="url(#glow)"/>
+    <g stroke="#dff8ff" stroke-opacity=".35">
+      <path d="M0 22h-20M0 52h-25M0 82h-20M250 22h20M250 52h25M250 82h20"/>
+    </g>
+  </g>
+
+  <!-- logo / title -->
+  <text x="110" y="190" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+        font-size="92" font-weight="700" letter-spacing="22">ABYZOR</text>
+  <line x1="112" y1="220" x2="620" y2="220" stroke="#fff" stroke-opacity=".25"/>
+  <text x="115" y="285" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+        font-size="48" font-weight="300" letter-spacing="15">AI MODULE</text>
+  <text x="117" y="335" fill="url(#accent)" font-family="Arial, Helvetica, sans-serif"
+        font-size="21" letter-spacing="7">LOCAL AI FOR MUSIC CREATORS</text>
+
+  <!-- features -->
+  <g font-family="Arial, Helvetica, sans-serif" fill="#eaeaea">
+    <text x="115" y="430" font-size="18" letter-spacing="4">∞</text>
+    <text x="115" y="462" font-size="13" letter-spacing="3">UNLIMITED</text>
+    <text x="115" y="484" font-size="13" letter-spacing="3">GENERATIONS</text>
+
+    <text x="335" y="430" font-size="18" letter-spacing="4">GPU / CPU</text>
+    <text x="335" y="462" font-size="13" letter-spacing="3">RUNS LOCALLY</text>
+    <text x="335" y="484" font-size="13" letter-spacing="3">ON YOUR MACHINE</text>
+
+    <text x="590" y="430" font-size="18" letter-spacing="4">LOCAL</text>
+    <text x="590" y="462" font-size="13" letter-spacing="3">PRIVATE BY</text>
+    <text x="590" y="484" font-size="13" letter-spacing="3">DESIGN</text>
+
+    <text x="790" y="430" font-size="18" letter-spacing="4">GENESIS +</text>
+    <text x="790" y="462" font-size="13" letter-spacing="3">WORKS WITH</text>
+    <text x="790" y="484" font-size="13" letter-spacing="3">VARIATIONS</text>
+  </g>
+
+  <rect x="0" y="660" width="1600" height="40" fill="#000" fill-opacity=".45"/>
+  <text x="80" y="686" fill="#8ba6ad" font-family="Arial, Helvetica, sans-serif"
+        font-size="12" letter-spacing="5">ABYZOR • LOCAL • OFFLINE • UNLIMITED</text>
+</svg>'''
+
+path = Path("/mnt/data/abyzor-ai-module-cover.svg")
+path.write_text(svg, encoding="utf-8")
+print(f"[Baixar o SVG](sandbox:{path})")
