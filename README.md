@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="2048" height="768" alt="6e566106-4480-4de7-ab5b-40f9df78a73f" src="https://github.com/user-attachments/assets/c60afc52-3afa-4d94-8be3-effa3b276a1f" />
+  <img src="assets/banner.svg" alt="ABYZOR AI Module - local AI engine for Windows and macOS" width="100%"/>
 </p>
 
 <p align="center">
@@ -13,12 +13,12 @@
 
 ## What is this?
 
-This repository is the **public download hub** for the **ABYZOR AI Module** â€” a separate product from [ABYZOR Genesis](https://github.com/abyzor/abyzor-genesis) and [ABYZOR Variations](https://github.com/abyzor/abyzor-variations).
+This repository is the **public download hub** for the **ABYZOR AI Module** - a separate product from [ABYZOR Genesis](https://github.com/abyzor/abyzor-genesis) and [ABYZOR Variations](https://github.com/abyzor/abyzor-variations).
 
 | | |
 |---|---|
 | **Purpose** | Install and update the **local AI engine** used by supported ABYZOR apps |
-| **Runs** | On your machine â€” **offline**, no API key, unlimited generations |
+| **Runs** | On your machine - **offline**, no API key, unlimited generations |
 | **Hardware** | **CPU** always; **GPU** when available (CUDA on Windows, Apple Silicon on Mac) |
 | **Source code** | Private development: [abyzor/abyzor-midi-ai](https://github.com/abyzor/abyzor-midi-ai) (not required to install) |
 
@@ -30,12 +30,12 @@ This repository is the **public download hub** for the **ABYZOR AI Module** â�
 
 ```mermaid
 flowchart LR
-  subgraph github [This repo â€” GitHub Release]
+  subgraph github [This repo - GitHub Release]
     Exe[Windows installer .exe]
     MacZip[macOS installer .zip]
     Man[manifest.json]
   end
-  subgraph hf [Hugging Face â€” engine bundle]
+  subgraph hf [Hugging Face - engine bundle]
     WinEng[ABYZOR-AI-Windows-x64.zip]
     MacEng[ABYZOR-AI-macOS-arm64.zip]
   end
@@ -55,7 +55,7 @@ flowchart LR
 
 1. You download the **installer** from [Releases](https://github.com/abyzor/abyzor-ai-module/releases).
 2. The installer reads **`manifest.json`** (same release) for version, checksums, and engine URLs.
-3. The **engine** (~400 MBâ€“3 GB) is fetched from [Hugging Face](https://huggingface.co/abyzor/abyzor-ai-module-engine), verified with **SHA-256**, then installed locally.
+3. The **engine** (~400 MB to 3 GB) is fetched from [Hugging Face](https://huggingface.co/abyzor/abyzor-ai-module-engine), verified with **SHA-256**, then installed locally.
 4. Host apps find the engine via **`shared-engine.json`**.
 
 Engine archives are **not** attached to GitHub releases (size limits); only the manifest points to Hugging Face **`/resolve/`** URLs.
@@ -71,23 +71,23 @@ Open **[Releases](https://github.com/abyzor/abyzor-ai-module/releases)** (includ
 | Step | Action |
 |:--:|--------|
 | 1 | Download **`ABYZOR_AI_Module_Installer_vX.Y.Z.exe`** |
-| 2 | Run the installer â†’ **Install** (or **Update** / **Reinstall** if already installed) |
+| 2 | Run the installer -> **Install** (or **Update** / **Reinstall** if already installed) |
 | 3 | Finish when you see **AI MODULE READY** |
 
 **Registration file:** `%LOCALAPPDATA%\ABYZOR\shared-engine.json`  
 **Install logs:** `%LOCALAPPDATA%\ABYZOR\Installer\logs\`
 
-### macOS (Apple Silicon â€” `arm64`)
+### macOS (Apple Silicon, `arm64`)
 
 | Step | Action |
 |:--:|--------|
 | 1 | Download **`ABYZOR_AI_Module_Installer_vX.Y.Z-macos-arm64.zip`** |
-| 2 | Unzip â†’ open **`AbYZOR.Installer.app`** |
-| 3 | Complete install â†’ **AI MODULE READY** |
+| 2 | Unzip -> open **`AbYZOR.Installer.app`** |
+| 3 | Complete install -> **AI MODULE READY** |
 
 **Registration file:** `~/Library/Application Support/ABYZOR/shared-engine.json`
 
-On first launch, macOS may block unsigned beta builds. Use **System Settings â†’ Privacy & Security â†’ Open Anyway** if prompted (notarization is planned for a later stable channel).
+On first launch, macOS may block unsigned beta builds. Use **System Settings -> Privacy & Security -> Open Anyway** if prompted (notarization is planned for a later stable channel).
 
 ---
 
@@ -126,8 +126,8 @@ Latest manifest URL (example for pinned version):
 
 | Product | Role | Needs AI Module? |
 |---------|------|------------------|
-| **[ABYZOR Genesis](https://github.com/abyzor/abyzor-genesis)** | Free MIDI generator (VST / standalone) | Optional â€” procedural MIDI works without it |
-| **ABYZOR AI Module** (this repo) | Local AI engine | â€” |
+| **[ABYZOR Genesis](https://github.com/abyzor/abyzor-genesis)** | Free MIDI generator (VST / standalone) | Optional - procedural MIDI works without it |
+| **ABYZOR AI Module** (this repo) | Local AI engine | N/A |
 | **[ABYZOR Variations](https://github.com/abyzor/abyzor-variations)** | Paid MIDI workflow | Can use the module when installed |
 
 ---
